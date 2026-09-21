@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蚣组词大全，提供包含“蚣”字的常用词汇、成语及拼音解释，涵盖昆虫名称、相关形容词及文学应用，帮助用户快速理解并正确使用该汉字。">
+    <meta name="keywords" content="蚣组词,蚙蚣,蜈蚣,蚣蝑,汉字组词">
+    <title>蚣组词 - 汉字词语大全与拼音解释</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem var(--spacing-unit);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
+            border-radius: var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .word-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .word-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .word-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .word-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .word-pinyin {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-family: "KaiTi", "楷体", serif;
+        }
+
+        .word-meaning {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .word-meaning strong {
+            color: var(--primary-color);
+        }
+
+        .section-block {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .idiom-list {
+            list-style: none;
+        }
+
+        .idiom-item {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            align-items: baseline;
+        }
+
+        .idiom-item:last-child {
+            border-bottom: none;
+        }
+
+        .idiom-chinese {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .idiom-pinyin {
+            font-family: "KaiTi", "楷体", serif;
+            color: var(--text-light);
+            margin-right: 1.5rem;
+        }
+
+        .idiom-meaning {
+            color: var(--text-color);
+        }
+
+        .idiom-meaning .explanation {
+            margin-top: 0.25rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .category-list a:hover {
+            background-color: #f0f0f0;
+            color: var(--accent-color);
+        }
+
+        .count {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .word-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><span>汉</span>字组词大全</a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">成语大全</a></li>
+                    <li><a href="#">拼音查询</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>蚣组词</h1>
+            <p>本页面提供包含“蚣”字的常用词汇、成语及详细解释，帮助您快速掌握该汉字的用法与搭配。</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">常见词语</h2>
+            <div class="word-grid">
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">蜈蚣</span>
+                        <span class="word-pinyin">wú gōng</span>
+                    </div>
+                    <p class="word-meaning">节肢动物。身体长而扁，由许多环节组成，头部有一对触角，腹部有步足，第一对步足成钩状，有毒腺。生活在阴湿处，吃小虫等。</p>
+                </article>
+
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">蚙蚣</span>
+                        <span class="word-pinyin">qián gōng</span>
+                    </div>
+                    <p class="word-meaning">一种昆虫，身体细长，深褐色，触角长，翅膀膜质，生活在草丛中。</p>
+                </article>
+
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">蚣蝑</span>
+                        <span class="word-pinyin">gōng shuā</span>
+                    </div>
+                    <p class="word-meaning">俗称“纺织娘”。昆虫，身体绿色或黄褐色，触角很长，前翅比较硬，后翅膜质，前足和中足适于抱握，后足适于跳跃。吃植物的叶和嫩茎。</p>
+                </article>
+
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">土蚣</span>
+                        <span class="word-pinyin">tǔ gōng</span>
+                    </div>
+                    <p class="word-meaning">蚯蚓的俗称。</p>
+                </article>
+
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">长蚣</span>
+                        <span class="word-pinyin">cháng gōng</span>
+                    </div>
+                    <p class="word-meaning">指一种形状像蜈蚣的爬行动物，体长。</p>
+                </article>
+
+                <article class="word-card">
+                    <div class="word-header">
+                        <span class="word-text">蚣蝮</span>
+                        <span class="word-pinyin">gōng fù</span>
+                    </div>
+                    <p class="word-meaning">古代传说中的一种动物，形状像龙，喜好水，常被雕在石桥的栏杆上。</p>
+                </article>
+            </div>
+        </section>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <section>
+                <h2 class="section-title">包含“蚣”的成语</h2>
+                <div class="section-block">
+                    <ul class="idiom-list">
+                        <li class="idiom-item">
+                            <span class="idiom-chinese">百足之虫，死而不僵</span>
+                            <span class="idiom-pinyin">bǎi zú zhī chóng, sǐ ér bù jiāng</span>
+                            <span class="idiom-meaning">
+                                <strong>释义：</strong>百足：虫名，又叫马陆，有很多脚。原指虫子死时身体虽不僵直，但末节仍能弹动。现比喻势力、集团等虽已衰败，但余威仍存。
+                            </span>
+                        </li>
+                        <li class="idiom-item">
+                            <span class="idiom-chinese">金蚨还魂</span>
+                            <span class="idiom-pinyin">jīn fú huán hún</span>
+                            <span class="idiom-meaning">
+                                <strong>释义：</strong>金蚨：传说中的虫名，据说用它的血涂在铜钱上就会飞走。比喻钱财用完又生钱。
+                            </span>
+                        </li>
+                        <li class="idiom-item">
+                            <span class="idiom-chinese">蚑行喙息</span>
+                            <span class="idiom-pinyin">qí xíng huì xī</span>
+                            <span class="idiom-meaning">
+                                <strong>释义：</strong>指昆虫、爬行动物和鸟类等动物。
+                            </span>
+                        </li>
+                        <li class="idiom-item">
+                            <span class="idiom-chinese">蚑行喘息</span>
+                            <span class="idiom-pinyin">qí xíng chuǎn xī</span>
+                            <span class="idiom-meaning">
+                                <strong>释义：</strong>指昆虫、爬行动物和鸟类等动物行走的喘息声。
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <h3>相关汉字</h3>
+                <ul class="category-list">
+                    <li><a href="#">虫 <span class="count">500+</span></a></li>
+                    <li><a href="#">蜈 <span class="count">120</span></a></li>
+                    <li><a href="#">蚩 <span class="count">85</span></a></li>
+                    <li><a href="#">蝮 <span class="count">60</span></a></li>
+                    <li><a href="#">螳 <span class="count">40</span></a></li>
+                    <li><a href="#">螽 <span class="count">35</span></a></li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">拼音分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">Gōng <span class="count">20</span></a></li>
+                    <li><a href="#">Wú <span class="count">15</span></a></li>
+                    <li><a href="#">Qián <span class="count">10</span></a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">知识扩展</h2>
+            <div class="section-block">
+                <p><strong>“蚣”字的字源与演变：</strong>“蚣”字属于形声字，从虫，工声。本义指一种昆虫，即“蚙蚣”。在古代文献中，它常用于描述具有多足或长条形特征的昆虫或爬行动物。</p>
+                <br>
+                <p><strong>用法提示：</strong>在现代汉语中，“蚣”字最常出现在“蜈蚣”一词中，指代一种有毒的节肢动物。此外，在文学或古文中，也偶见于“蚙蚣”、“蚣蝑”等词汇，用以指代特定的昆虫种类，如纺织娘的别称。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="color: #ccc; font-size: 0.9rem;">汉字组词大全致力于提供最全、最准的汉字词语解释与搭配，帮助用户提升语言运用能力。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">成语词典</a></li>
+                    <li><a href="#">反义词大全</a></li>
+                    <li><a href="#">近义词大全</a></li>
+                    <li><a href="#">组词造句</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">用户反馈</a></li>
+                    <li><a href="#">广告合作</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 汉字组词大全. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
