@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="隔山有眼3qvod - 提供恐怖电影《隔山有眼3》的在线观看资源与剧情介绍，包含高清资源、观看指南及影视资讯。">
+    <meta name="keywords" content="隔山有眼3qvod, 隔山有眼3, 隔山有眼3在线观看, 恐怖电影, 恐怖片资源">
+    <title>隔山有眼3qvod - 恐怖电影在线观看与资源指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #b91c1c;
+            --bg-color: #0f0f0f;
+            --card-bg: #1f1f1f;
+            --text-main: #f3f4f6;
+            --text-sub: #9ca3af;
+            --border-color: #374151;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 15, 15, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(to top, var(--bg-color), transparent), 
+                        url('https://picsum.photos/seed/horror3/1600/900') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #991b1b;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--text-main);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: normal;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent-color);
+        }
+
+        .card-poster {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .quality-tag {
+            background-color: #374151;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Info Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .info-box {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--text-sub);
+        }
+
+        .detail-value {
+            font-weight: 500;
+        }
+
+        /* Player Placeholder */
+        .player-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .player-icon {
+            font-size: 3rem;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--text-sub);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">恐怖<span>影院</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">高分榜单</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>隔山有眼3</h1>
+                <p>深入丛林深处，揭开被遗忘的恐怖真相。本片延续了系列经典的生存惊悚风格，为您呈现极致的视听体验。</p>
+                <div class="hero-actions">
+                    <button class="btn" onclick="document.getElementById('player-section').scrollIntoView({behavior: 'smooth'})">立即观看</button>
+                    <button class="btn btn-outline">收藏影片</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section id="player-section" class="player-section" style="margin-top: 40px;">
+            <div class="section-title">在线播放</div>
+            <div class="player-placeholder">
+                <div class="player-icon">▶</div>
+                <p>视频加载区域 (模拟播放器)</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">请点击上方按钮或下方播放源开始播放</p>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section class="info-section" style="margin-top: 60px;">
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>影片信息</h3>
+                    <ul class="detail-list">
+                        <li><span class="detail-label">导演</span><span class="detail-value">亚历杭德罗·阿梅纳瓦尔</span></li>
+                        <li><span class="detail-label">主演</span><span class="detail-value">凯瑞·王, 约翰·雷吉扎莫</span></li>
+                        <li><span class="detail-label">类型</span><span class="detail-value">恐怖, 惊悚, 恶魔</span></li>
+                        <li><span class="detail-label">上映年份</span><span class="detail-value">2007</span></li>
+                        <li><span class="detail-label">片长</span><span class="detail-value">107 分钟</span></li>
+                        <li><span class="detail-label">语言</span><span class="detail-value">英语</span></li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>剧情简介</h3>
+                    <p style="color: #d1d5db; font-size: 0.95rem; margin-bottom: 15px;">
+                        《隔山有眼3》是恐怖电影《隔山有眼》系列的第三部作品。故事发生在1974年的新墨西哥州，两名探员正在调查一系列离奇的失踪案，线索最终将他们引向了一个看似与世隔绝的偏僻社区。这个社区由一位神秘且极其危险的父亲统治，任何试图接近的人都会面临毁灭性的后果。影片探讨了人性在极端环境下的扭曲与挣扎，是一部充满血腥与心理惊悚元素的经典之作。
+                    </p>
+                    <h4>观看指南</h4>
+                    <p style="color: var(--text-sub); font-size: 0.9rem; margin-top: 10px;">
+                        推荐在夜间、佩戴耳机、独自一人观看以获得最佳沉浸体验。请确保您的网络环境稳定，以支持高清流畅播放。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations" style="margin-top: 60px;">
+            <div class="section-title">
+                猜你喜欢
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/horror1/300/450" alt="恐怖电影封面" class="card-poster">
+                    <div class="card-info">
+                        <h3 class="card-title">德州电锯杀人狂</h3>
+                        <div class="card-meta">
+                            <span>恐怖</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/horror2/300/450" alt="恐怖电影封面" class="card-poster">
+                    <div class="card-info">
+                        <h3 class="card-title">寂静岭</h3>
+                        <div class="card-meta">
+                            <span>惊悚</span>
+                            <span class="quality-tag">4K</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/horror4/300/450" alt="恐怖电影封面" class="card-poster">
+                    <div class="card-info">
+                        <h3 class="card-title">小岛惊魂</h3>
+                        <div class="card-meta">
+                            <span>悬疑</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/horror5/300/450" alt="恐怖电影封面" class="card-poster">
+                    <div class="card-info">
+                        <h3 class="card-title">招魂</h3>
+                        <div class="card-meta">
+                            <span>超自然</span>
+                            <span class="quality-tag">HD</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" style="margin-top: 60px;">
+            <div class="section-title">常见问题</div>
+            
+            <div class="faq-item">
+                <div class="faq-question">如何播放隔山有眼3qvod？</div>
+                <div class="faq-answer">请点击页面顶部的“立即观看”按钮，或向下滚动至播放区域。我们提供多种播放源供您选择，建议优先使用备用源以确保播放流畅。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">这部电影在哪里可以下载？</div>
+                <div class="faq-answer">本站提供在线流媒体播放服务，暂不支持直接下载。建议在稳定的网络环境下在线观看，以获得最佳的画质和音效体验。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">影片是否需要注册会员？</div>
+                <div class="faq-answer">目前隔山有眼3等所有资源均可免费在线观看，无需注册登录。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系站长</a>
+                <a href="#">网站地图</a>
+            </div>
+            <p>&copy; 2023 恐怖影院资源站. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #555;">
+                本站资源仅供学习交流，请于下载后24小时内删除。如喜欢影片，请支持正版。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
