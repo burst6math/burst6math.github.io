@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="剑网三丐帮门派专题页，提供丐帮门派背景故事、技能机制详解、PVP/PVE玩法攻略、装备搭配建议及门派荣誉展示。">
+    <meta name="keywords" content="剑网三丐帮,丐帮,剑网三,门派攻略,技能解析,丐帮PVP">
+    <title>剑网三丐帮-丐帮门派攻略与实战指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --bg-color: #F9F7F2;
+            --text-color: #333;
+            --text-light: #666;
+            --card-bg: #FFFFFF;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/jianwang3/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Core Mechanics */
+        .mechanics {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+
+        .mechanics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mech-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .mech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mech-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mech-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            background-color: rgba(210, 105, 30, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Builds & Rotation */
+        .builds {
+            padding: 4rem 0;
+        }
+
+        .build-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--secondary-color);
+            background: transparent;
+            color: var(--secondary-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .build-content {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .build-content.active {
+            display: block;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-item {
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .skill-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+            .nav-wrapper {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <span>丐帮</span>攻略站
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#about">门派背景</a></li>
+                <li><a href="#mechanics">技能机制</a></li>
+                <li><a href="#builds">配装与循环</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>剑网三丐帮</h1>
+            <p>笑看红尘，豪饮江湖。丐帮，江湖第一大帮，以逍遥棍法行走天下。</p>
+            <a href="#about" class="btn">探索丐帮世界</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about container">
+        <h2 class="section-title">门派背景</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>丐帮作为江湖第一大帮，门人遍布天下。丐帮弟子多为贫寒出身，虽食不果腹，却心怀家国，仗义疏财。他们身着破旧衣衫，手持竹杖，看似落魄，实则深藏不露。</p>
+                <p>丐帮武学以“打狗棒法”为镇帮绝技，刚柔并济，变化无穷。其核心心法《降龙十八掌》更是刚猛无俦，讲究一力降十会，在近战输出中占据重要地位。丐帮弟子性格豪爽，爱恨分明，是游戏中极具辨识度的职业。</p>
+                <p>在当前版本中，丐帮凭借其出色的爆发能力和控制手段，在PVP竞技场和攻防战中都有着极高的出场率。</p>
+            </div>
+            <div class="about-image">
+                <img src="https://picsum.photos/seed/daogang/600/400.jpg" alt="丐帮门派形象">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanics Section -->
+    <section id="mechanics" class="mechanics">
+        <div class="container">
+            <h2 class="section-title">核心机制</h2>
+            <div class="mechanics-grid">
+                <article class="mech-card">
+                    <span class="tag">生存能力</span>
+                    <h3>破釜沉舟</h3>
+                    <p>丐帮的核心生存技能。主动开启后，大幅提升自身会心几率，并在短时间内无法被控制。这是丐帮在PVP中反打或保命的关键技能，合理利用破釜沉舟的霸体和增伤效果，往往能扭转战局。</p>
+                </article>
+                <article class="mech-card">
+                    <span class="tag">控制技能</span>
+                    <h3>醉饮江湖</h3>
+                    <p>丐帮的控制技能。击退敌人并造成伤害。该技能拥有较短的冷却时间，是打断对手起手、调整站位以及连招衔接的重要手段。在PVP中，精准的醉饮江湖可以打断对手的爆发节奏。</p>
+                </article>
+                <article class="mech-card">
+                    <span class="tag">爆发输出</span>
+                    <h3>亢龙有悔</h3>
+                    <p>丐帮的招牌输出技能，也是连招的起点。根据消耗的内力值不同，可以打出不同层数的伤害。叠加至最大层数时，伤害倍率最高。玩家需要通过内力管理来控制亢龙有悔的层数，以达到最大输出。</p>
+                </article>
+                <article class="mech-card">
+                    <span class="tag">爆发输出</span>
+                    <h3>摧心掌</h3>
+                    <p>丐帮的核心持续伤害技能。通过积攒“摧心”层数来提高后续技能的伤害。在PVP中，摧心掌配合破釜沉舟和亢龙有悔，可以打出成吨的爆发伤害，是丐帮秒杀脆皮的关键。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Builds Section -->
+    <section id="builds" class="builds container">
+        <h2 class="section-title">配装与循环</h2>
+        <div class="build-tabs">
+            <button class="tab-btn active" onclick="switchTab('pvp')">PVP 攻防</button>
+            <button class="tab-btn" onclick="switchTab('pve')">PVE 团本</button>
+        </div>
+
+        <!-- PVP Build -->
+        <div id="pvp" class="build-content active">
+            <h3>PVP 核心思路</h3>
+            <p>丐帮在PVP中属于高爆发近战。核心思路是利用<strong>醉饮江湖</strong>调整位置，利用<strong>摧心掌</strong>起手挂Dot，随后开启<strong>破釜沉舟</strong>打出爆发连招。</p>
+            <div class="skill-list">
+                <div class="skill-item">
+                    <h4>亢龙有悔</h4>
+                    <p>起手爆发，根据层数决定伤害量。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>破釜沉舟</h4>
+                    <p>爆发期间必须开启，提供增伤与霸体。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>泥鳅功</h4>
+                    <p>位移技能，用于追击或脱离危险。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>浩气盟/恶人谷</h4>
+                    <p>根据阵营选择不同的心法流派。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PVE Build -->
+        <div id="pve" class="build-content">
+            <h3>PVE 团本配装建议</h3>
+            <p>在PVE中，丐帮需要堆叠<strong>会心</strong>和<strong>攻击</strong>属性。推荐使用“易水寒”或“万世流芳”套装。核心技能循环为：<strong>摧心掌 -> 亢龙有悔 -> 醉饮江湖 -> 破釜沉舟</strong>。</p>
+            <div class="skill-list">
+                <div class="skill-item">
+                    <h4>摧心掌</h4>
+                    <p>起手挂Dot，保证全程覆盖。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>亢龙有悔</h4>
+                    <p>循环核心，注意内力消耗与层数叠加。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>泥鳅功</h4>
+                    <p>利用位移躲避BOSS机制。</p>
+                </div>
+                <div class="skill-item">
+                    <h4>啸日之吼</h4>
+                    <p>提供团队增益，注意释放时机。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container" style="padding-bottom: 4rem;">
+        <h2 class="section-title">常见问题</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details style="margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; padding: 1rem; background: #fff;">
+                <summary style="font-weight: bold; cursor: pointer; color: var(--primary-color);">丐帮在PVP中如何应对远程职业？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-light);">丐帮拥有<strong>泥鳅功</strong>和<strong>醉饮江湖</strong>两个位移技能。面对远程职业，应利用泥鳅功快速突进，利用醉饮江湖击退对手，从而缩短距离，进入近战输出范围。</p>
+            </details>
+            <details style="margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; padding: 1rem; background: #fff;">
+                <summary style="font-weight: bold; cursor: pointer; color: var(--primary-color);">丐帮的爆发节奏是什么？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-light);">爆发节奏通常为：挂上摧心掌 -> 开启破釜沉舟 -> 连续释放亢龙有悔（根据层数） -> 配合啸日之吼等爆发技能。关键在于破釜沉舟期间不能被控制，否则爆发会中断。</p>
+            </details>
+            <details style="margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; padding: 1rem; background: #fff;">
+                <summary style="font-weight: bold; cursor: pointer; color: var(--primary-color);">PVE和PVP的属性优先级有什么区别？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-light);">PVP主要堆会心、攻击和破防；PVE则更看重会效、会心和攻击。此外，PVP中需要适当堆叠韧劲，而PVE中则需要关注技能冷却和内力回复。</p>
+            </details>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于丐帮</h4>
+                <p>剑网三丐帮攻略站，致力于为玩家提供最全、最新的门派资讯与玩法指南。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">门派背景</a></li>
+                    <li><a href="#">技能图鉴</a></li>
+                    <li><a href="#">装备推荐</a></li>
+                    <li><a href="#">副本攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区互动</h4>
+                <ul>
+                    <li><a href="#">玩家论坛</a></li>
+                    <li><a href="#">攻略投稿</a></li>
+                    <li><a href="#">BUG反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 剑网三丐帮攻略站. All rights reserved. 本站内容仅供玩家交流参考，非官方渠道。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function switchTab(tabId) {
+        // Hide all contents
+        const contents = document.querySelectorAll('.build-content');
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Deactivate all buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Show selected content and activate button
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
