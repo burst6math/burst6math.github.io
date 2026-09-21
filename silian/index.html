@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>思恋-情感寄托与心灵慰藉指南</title>
+    <meta name="description" content="思恋指南：探索思念的情感价值，提供缓解思念的方法、情感故事分享及心灵疗愈建议。">
+    <meta name="keywords" content="思恋,思念,情感,心灵疗愈,情感寄托">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e7bb5;
+            --primary-dark: #6b5b7a;
+            --accent-color: #d4a373;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f9f7f2;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(142, 123, 181, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #fdfbf7 0%, #e6e0e9 100%);
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .hero-bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+            background-image: radial-gradient(var(--primary-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* Concept Section */
+        .concept {
+            padding: 5rem 0;
+            background-color: var(--bg-body);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .concept-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .concept-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .concept-list {
+            margin-top: 2rem;
+        }
+
+        .concept-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .concept-list li svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            fill: var(--accent-color);
+        }
+
+        .concept-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .concept-visual img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            filter: sepia(0.3);
+            transition: var(--transition);
+        }
+
+        .concept-visual:hover img {
+            filter: sepia(0);
+        }
+
+        /* Interactive Section */
+        .interactive {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(142, 123, 181, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .card-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Stories Section */
+        .stories {
+            padding: 5rem 0;
+            background-color: var(--bg-body);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .story-card:hover {
+            transform: scale(1.02);
+        }
+
+        .story-img {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .story-content {
+            padding: 1.5rem;
+        }
+
+        .story-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .story-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d2d2d;
+            color: #aaa;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 4rem 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>思恋</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#concept" class="active">情感解析</a></li>
+                    <li><a href="#methods">缓解方法</a></li>
+                    <li><a href="#stories">情感故事</a></li>
+                    <li><a href="#faq">常见问答</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">分享你的故事</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-decoration"></div>
+        <div class="hero-content">
+            <h1>思恋是爱的<span class="highlight">另一种形式</span></h1>
+            <p>探索思念的深层含义，学习如何健康地处理思念之情，让这份情感成为连接彼此的温暖纽带，而非心灵的负担。</p>
+            <div class="hero-actions">
+                <a href="#methods" class="cta-btn">了解如何缓解</a>
+                <a href="#stories" class="btn-outline">阅读感人故事</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="concept">
+        <div class="container">
+            <div class="concept-grid">
+                <div class="concept-text">
+                    <h2>什么是思恋？</h2>
+                    <p>思恋，通常被称为“思念”或“想念”，是指一个人对不在身边的人或事物的深切眷恋与渴望。它是一种复杂的心理状态，既包含着情感的依恋，也伴随着距离带来的焦虑。</p>
+                    <p>思恋并不可耻，也不一定是软弱的表现。在心理学上，适度的思恋是人际关系紧密的证明，它代表了我们对所爱之人的重视。理解思恋的本质，是开始自我疗愈的第一步。</p>
+                    <ul class="concept-list">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span>是情感连接的纽带</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span>也是自我反思的契机</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span>需要被正确认知和管理</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="concept-visual">
+                    <img src="https://picsum.photos/seed/love/600/400" alt="思恋的情感意象">
+                    <h3>距离产生美</h3>
+                    <p>正如诗歌所言，距离不仅产生美，也产生了我们此刻所感受到的思恋。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methods Section -->
+    <section id="methods" class="interactive">
+        <div class="container">
+            <h2 class="section-title">如何健康地面对思恋</h2>
+            <div class="interactive-grid">
+                <article class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <h3>建立新的生活节奏</h3>
+                    <p>当思念来袭时，不要沉溺于过去。尝试建立新的日常习惯，比如学习一项新技能、开始健身或培养一个新的爱好。充实的生活能有效地转移注意力，让思念转化为前进的动力。</p>
+                    <a href="#" class="card-link">探索生活方式建议</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    </div>
+                    <h3>保持线上沟通</h3>
+                    <p>在无法相见的日子里，视频通话和即时通讯是维系感情的重要工具。但要注意沟通的质量，不仅仅是分享日常琐事，更要进行深度的情感交流，分享彼此的感受和想法。</p>
+                    <a href="#" class="card-link">提升沟通技巧</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>
+                    </div>
+                    <h3>书写与记录</h3>
+                    <p>写下你的思念，或者给对方写一封长信。文字具有治愈的力量，它能帮你理清思绪，将模糊的痛苦转化为具体的情感表达。这些文字在未来可能成为珍贵的回忆。</p>
+                    <a href="#" class="card-link">开始书写练习</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                    </div>
+                    <h3>设定重逢计划</h3>
+                    <p>将“思恋”转化为“期待”。设定一个具体的见面计划或共同的目标，这能让你在等待的日子里拥有盼头，让思恋不再只是痛苦的煎熬，而是一种甜蜜的铺垫。</p>
+                    <a href="#" class="card-link">规划下一次相聚</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories">
+        <div class="container">
+            <h2 class="section-title">关于思恋的故事</h2>
+            <div class="story-grid">
+                <article class="story-card">
+                    <div class="story-img">
+                        <img src="https://picsum.photos/seed/memory1/400/300" alt="异地恋">
+                        <span class="story-tag">异地恋</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>跨越山海的守护</h3>
+                        <p>他们相隔两千公里，每天靠视频维持感情。思恋是深夜的想念，也是清晨的早安。他们用坚持证明了距离不是阻碍。</p>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-img">
+                        <img src="https://picsum.photos/seed/memory2/400/300" alt="离别">
+                        <span class="story-tag">离别</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>离别是为了更好的相遇</h3>
+                        <p>毕业季的思恋最为浓烈。离开校园后，他们才明白那些一起走过的路、一起吃过的饭，都化作了心中最温暖的底色。</p>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-img">
+                        <img src="https://picsum.photos/seed/memory3/400/300" alt="亲情">
+                        <span class="story-tag">亲情</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>电话线那头的牵挂</h3>
+                        <p>对于父母来说，思恋是电话里永远问不完的“吃了吗”。对于子女来说，思恋是努力工作想让父母过上好日子的动力。</p>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="cta-btn">阅读更多故事</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    思恋过度会影响健康吗？
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </div>
+                <div class="faq-answer">
+                    长期、强烈的思恋如果得不到缓解，可能会导致焦虑、失眠、食欲不振等生理和心理症状。适度的转移注意力和积极的心理调节非常重要。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    思念对方是软弱的表现吗？
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </div>
+                <div class="faq-answer">
+                    不是。思念代表着你对他人的在乎和情感的深度。这是人类共有的情感体验，是真诚和深情的体现。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何判断这种思恋是否正常？
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </div>
+                <div class="faq-answer">
+                    正常的思恋是间歇性的，不会严重影响你的日常生活和工作。如果你发现自己无法控制这种情绪，甚至无法进行正常的社会功能，可能需要寻求专业心理咨询的帮助。
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于思恋</h4>
+                    <p>我们致力于帮助人们理解情感，治愈心灵，建立健康的人际关系。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#concept">情感解析</a></li>
+                        <li><a href="#methods">缓解方法</a></li>
+                        <li><a href="#stories">情感故事</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：support@si-lian.com</li>
+                        <li>地址：情感疗愈中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 思恋指南 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
