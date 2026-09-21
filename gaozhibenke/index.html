@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高职本科-应用型人才培养与升学指南平台</title>
+    <meta name="description" content="高职本科专业介绍、招生政策解读、升学路径规划及就业前景分析。提供最新的职业教育改革资讯与院校选择建议，帮助学子实现学历提升与职业发展。">
+    <meta name="keywords" content="高职本科,职业本科,专升本,应用型本科,职业教育,学历提升">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --accent-color: #ff9f1c;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+
+        .btn-cta:hover {
+            background-color: #004494;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* News & Policy List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .news-date {
+            background-color: #eef5fc;
+            color: var(--primary-color);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            min-width: 70px;
+            height: fit-content;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-content h3 a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list span {
+            background: #eee;
+            color: #666;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Pathway Steps */
+        .pathway-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .pathway-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #eee;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+        }
+
+        .step h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .step p {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* Featured Programs Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .program-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .program-img {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .program-info {
+            padding: 20px;
+        }
+
+        .program-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .program-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .program-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-white);
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pathway-steps {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span>职升本网</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">政策解读</a></li>
+                <li><a href="#">院校推荐</a></li>
+                <li><a href="#">专业大全</a></li>
+                <li><a href="#">报考指南</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-cta">免费咨询</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>高职本科：应用型人才的新选择</h1>
+        <p>探索职业教育本科教育体系，了解“3+2”分段培养、专升本政策及就业前景，为您的职业发展铺平道路。</p>
+        <div style="margin-top: 30px;">
+            <a href="#" class="btn-cta" style="background: white; color: var(--primary-color);">查看热门专业</a>
+            <a href="#" style="color: white; border: 1px solid white; padding: 8px 20px; border-radius: var(--border-radius); margin-left: 10px; display: inline-block;">政策查询</a>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>开设院校</p>
+            </div>
+            <div class="stat-item">
+                <h3>200+</h3>
+                <p>本科专业</p>
+            </div>
+            <div class="stat-item">
+                <h3>90%</h3>
+                <p>就业率</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container main-content">
+    <!-- Left Column: News & Info -->
+    <section class="content-left">
+        
+        <div class="section-header">
+            <h2>最新政策与资讯</h2>
+            <a href="#" class="view-all">查看更多 &rarr;</a>
+        </div>
+
+        <div class="news-list">
+            <article class="news-item">
+                <div class="news-date">
+                    <span class="day">15</span>
+                    <span class="month">10月</span>
+                </div>
+                <div class="news-content">
+                    <h3><a href="#">教育部印发意见：加快推进职业教育本科教育高质量发展</a></h3>
+                    <p class="news-excerpt">为进一步深化产教融合，提升职业教育服务产业发展能力，教育部近日发布关于加快推进职业教育本科教育高质量发展的指导意见，明确将扩大应用型本科专业招生规模。</p>
+                    <div class="news-meta">来源：教育部官网 | 阅读：1,203</div>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-date">
+                    <span class="day">12</span>
+                    <span class="month">10月</span>
+                </div>
+                <div class="news-content">
+                    <h3><a href="#">2024年高职本科招生计划公布，这些省份新增名额</a></h3>
+                    <p class="news-excerpt">各地教育考试院陆续发布2024年高职本科招生简章，部分省份在计算机类、智能制造类等专业上大幅增加招生名额，为专科生提供更多升学机会。</p>
+                    <div class="news-meta">来源：各省教育考试院 | 阅读：856</div>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-date">
+                    <span class="day">08</span>
+                    <span class="month">10月</span>
+                </div>
+                <div class="news-content">
+                    <h3><a href="#">“专升本”与“高职本科”有什么区别？一文读懂学历含金量</a></h3>
+                    <p class="news-excerpt">很多同学对高职本科与统招专升本、普通本科的区别感到困惑。本文将从学制、培养目标、学历认证等维度为您详细解析高职本科的独特优势。</p>
+                    <div class="news-meta">来源：职升本网 | 阅读：2,340</div>
+                </div>
+            </article>
+        </div>
+
+        <div class="section-header" style="margin-top: 40px;">
+            <h2>热门专业推荐</h2>
+            <a href="#" class="view-all">查看全部 &rarr;</a>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://picsum.photos/seed/tech1/400/250" alt="大数据技术">
+                    <span class="program-tag">热门</span>
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">大数据技术与应用</h3>
+                    <p class="program-desc">培养掌握大数据采集、清洗、分析及可视化技能的复合型技术人才，就业方向涵盖互联网、金融、制造业。</p>
+                    <div class="program-footer">
+                        <span>学制：4年</span>
+                        <span>热度：98%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://picsum.photos/seed/tech2/400/250" alt="新能源汽车">
+                    <span class="program-tag">紧缺</span>
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">新能源汽车工程技术</h3>
+                    <p class="program-desc">聚焦电动汽车设计、电池管理及智能驾驶技术，对接新能源汽车产业链高端岗位需求。</p>
+                    <div class="program-footer">
+                        <span>学制：4年</span>
+                        <span>热度：95%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://picsum.photos/seed/tech3/400/250" alt="护理学">
+                    <span class="program-tag">稳定</span>
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">护理学（本科）</h3>
+                    <p class="program-desc">培养具备临床护理、社区护理及健康管理能力的高级应用型护理人才，满足老龄化社会需求。</p>
+                    <div class="program-footer">
+                        <span>学制：4年</span>
+                        <span>热度：92%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Right Column: Sidebar -->
+    <aside>
+        <div class="card">
+            <h3 class="card-title">报考路径</h3>
+            <div class="pathway-steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h4>了解政策</h4>
+                    <p>研读各省高职本科招生计划</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h4>选择专业</h4>
+                    <p>结合兴趣与就业前景</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h4>志愿填报</h4>
+                    <p>参考往年录取分数线</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <h4>录取入学</h4>
+                    <p>享受本科同等待遇</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">热门院校</h3>
+            <ul class="category-list">
+                <li><a href="#"><span>江苏理工学院</span> <span>5.2</span></a></li>
+                <li><a href="#"><span>常州工学院</span> <span>4.8</span></a></li>
+                <li><a href="#"><span>浙江科技学院</span> <span>4.9</span></a></li>
+                <li><a href="#"><span>广东技术师范大学</span> <span>4.7</span></a></li>
+                <li><a href="#"><span>福建工程学院</span> <span>4.6</span></a></li>
+            </ul>
+        </div>
+
+        <div class="card" style="background-color: #eef5fc; border: 1px solid #d4e9fc;">
+            <h3 class="card-title" style="border:none; color: var(--primary-color);">咨询热线</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 10px;">400-123-4567</p>
+            <p style="font-size: 0.9rem; color: var(--text-gray);">工作日 9:00 - 18:00</p>
+            <a href="#" style="display: block; margin-top: 15px; text-align: center; background: white; color: var(--primary-color); padding: 8px; border-radius: 4px; font-weight: 600;">立即预约</a>
+        </div>
+    </aside>
+</main>
+
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>常见问题解答</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4 class="faq-question">高职本科和普通本科有什么区别？</h4>
+                <p class="faq-answer">高职本科属于应用型本科，侧重于实践技能和职业能力的培养，与普通本科的学术型培养模式有所不同，但在学历层次上属于同一级别。</p>
+            </div>
+            <div class="faq-item">
+                <h4 class="faq-question">高职本科毕业生能考研究生吗？</h4>
+                <p class="faq-answer">可以。高职本科毕业生在获得本科学历和学位后，完全符合国家研究生招生的报考条件。</p>
+            </div>
+            <div class="faq-item">
+                <h4 class="faq-question">“3+2”转段是什么意思？</h4>
+                <p class="faq-answer">“3+2”通常指在专科阶段学习3年后，通过考核转入本科院校再学习2年，毕业后获得本科学历和学士学位。</p>
+            </div>
+            <div class="faq-item">
+                <h4 class="faq-question">高职本科的学费贵吗？</h4>
+                <p class="faq-answer">高职本科的学费标准与普通本科基本一致，一般在每年5000-8000元之间，具体视院校和专业而定。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>职升本网</h2>
+                <p>专注职业教育升学服务，致力于为广大学子提供最权威的高职本科政策解读、院校信息和报考指导。</p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">招生简章</a></li>
+                    <li><a href="#">历年分数线</a></li>
+                    <li><a href="#">专业库</a></li>
+                    <li><a href="#">视频课程</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">知乎专栏</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 职升本网 版权所有 | 仅供展示使用</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+                  </html>
