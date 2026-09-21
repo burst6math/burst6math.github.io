@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西瓜高清播放器-全能视频解码与本地播放解决方案</title>
+    <meta name="description" content="西瓜高清播放器是一款专为本地视频优化的高性能媒体播放软件。支持几乎所有主流视频格式解码，具备倍速播放、硬解优化、画中画及播放列表管理功能，为用户提供流畅、高清、无广告的影音体验。">
+    <meta name="keywords" content="西瓜高清播放器,本地播放器,视频解码器,MP4播放,高清视频播放,倍速播放">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e65100;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --border-color: #e0e0e0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(255, 107, 0, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Supported Formats */
+        .formats {
+            background-color: #fff;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .format-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .format-icon {
+            font-size: 32px;
+            color: var(--text-secondary);
+        }
+
+        .format-name {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            padding: 80px 0;
+        }
+
+        .comparison-layout {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .comparison-info {
+            flex: 1;
+        }
+
+        .comparison-info h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            margin-top: 4px;
+        }
+
+        .comparison-image {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .comparison-image img {
+            width: 100%;
+            border-radius: var(--radius-md);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #b0b0b0;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3d3d3d;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .comparison-layout {
+                flex-direction: column;
+            }
+
+            .format-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                <span>西瓜高清播放器</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#features">功能特点</a>
+                <a href="#formats">格式支持</a>
+                <a href="#comparison">使用对比</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="btn-download">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-tag">v3.5.0 全新发布</span>
+                    <h1>释放本地影音潜能<br>体验极致高清播放</h1>
+                    <p>无论是 4K 蓝光原盘还是复杂的 MKV/AVI 文件，西瓜高清播放器都能凭借强大的解码引擎，为您提供流畅、稳定、无损的视听享受。</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="alert('正在跳转至下载页面...')">免费下载 Windows版</button>
+                        <button class="btn-outline">查看更新日志</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/video-player-interface/600/350" alt="西瓜高清播放器界面预览">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择西瓜高清播放器</h2>
+                    <p>专为视频发烧友打造的本地播放工具，拒绝网络卡顿，还原原始画质。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>全格式解码支持</h3>
+                        <p>内置强大的解码库，完美支持 H.265/HEVC、VP9、AV1 等新一代视频编码，轻松播放各种高码率视频文件。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </div>
+                        <h3>倍速播放与调速</h3>
+                        <p>支持 0.5x 至 3.0x 无极变速播放，配合断点续播和书签功能，是学习课程和回顾剧情的必备神器。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                        <h3>智能截图与滤镜</h3>
+                        <p>内置多种美化滤镜，一键截图并保存高清图片。支持 16:9、4:3 等多种宽高比裁剪模式。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h3>播放列表管理</h3>
+                        <p>支持批量导入本地文件夹，自动生成播放列表。支持随机播放、循环播放模式，管理海量本地影音资源。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Formats -->
+        <section id="formats" class="formats">
+            <div class="container">
+                <div class="section-header">
+                    <h2>广泛支持的格式</h2>
+                    <p>无需转换，即点即播。覆盖主流视频、音频及字幕格式。</p>
+                </div>
+                <div class="format-grid">
+                    <div class="format-item">
+                        <div class="format-icon">MP4</div>
+                        <div class="format-name">MP4 / MOV</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">MKV</div>
+                        <div class="format-name">MKV / AVI</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">H265</div>
+                        <div class="format-name">H.265 / HEVC</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">SUB</div>
+                        <div class="format-name">SRT / ASS / VTT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison">
+            <div class="container comparison-layout">
+                <div class="comparison-info">
+                    <h2>本地播放 vs 网络播放</h2>
+                    <p style="margin-bottom: 20px; color: var(--text-secondary);">网络视频受限于带宽和版权，而本地播放器能带给你真正的自由。</p>
+                    <ul class="comparison-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>无广告干扰</strong>
+                                <p style="font-size: 14px; color: var(--text-secondary);">纯净无广告，专注于视频内容本身。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>离线观看</strong>
+                                <p style="font-size: 14px; color: var(--text-secondary);">下载电影到本地，断网也能随时欣赏。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>硬件加速</strong>
+                                <p style="font-size: 14px; color: var(--text-secondary);">调用显卡性能，低配置电脑也能流畅播放 4K。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>自定义界面</strong>
+                                <p style="font-size: 14px; color: var(--text-secondary);">支持皮肤更换和快捷键自定义，操作更顺手。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison-image">
+                    <img src="https://picsum.photos/seed/settings-panel/600/400" alt="播放器设置界面">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">西瓜高清播放器支持哪些系统？</div>
+                        <div class="faq-answer">目前西瓜高清播放器主要提供 Windows 10/11 版本。iOS 和 Android 移动端版本正在开发中，敬请期待。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">播放 4K 视频卡顿怎么办？</div>
+                        <div class="faq-answer">请确保您的电脑显卡驱动已更新。在播放器设置中开启“硬件加速”选项，并尝试降低视频码率或关闭后台占用资源的程序。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何添加字幕文件？</div>
+                        <div class="faq-answer">点击播放器菜单栏的“打开”选项，选择“字幕”子菜单，即可加载本地 SRT、ASS 等格式的字幕文件。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">软件是免费的吗？</div>
+                        <div class="faq-answer">是的，西瓜高清播放器核心功能完全免费，无任何功能限制，无广告弹窗。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>西瓜高清播放器</h3>
+                    <p style="font-size: 14px; line-height: 1.8;">致力于为用户提供最专业、最便捷的本地媒体播放解决方案。让每一个文件都值得被完美呈现。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#">下载软件</a></li>
+                        <li><a href="#">版本更新</a></li>
+                        <li><a href="#">功能介绍</a></li>
+                        <li><a href="#">壁纸主题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助</h4>
+                    <ul>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 西瓜高清播放器工作室. All Rights Reserved. 仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
